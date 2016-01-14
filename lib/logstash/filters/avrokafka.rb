@@ -21,7 +21,7 @@ class LogStash::Filters::Avrokafka < LogStash::Filters::Base
 
   # URL of where to fetch the Avro schema. The schema id will be appended directly at
   # the end of the URL so make sure to get it right with ending slashes et cetera.  
-  config :schema_registry, :validate => :string, :default => "http://127.0.0.1:9999/id/", :required => true
+  config :schema_registry, :validate => :string, :required => true
 
   # A byte identifier at the top/beginning of the blob.
   config :magic_byte, :validate => :number, :default => 255, :required => false
