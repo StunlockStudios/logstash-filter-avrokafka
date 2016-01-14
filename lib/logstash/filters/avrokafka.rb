@@ -9,8 +9,8 @@ require "avro"
 # Confusing name, does not actually have anything to do with Kafka. Takes a raw binary blob of serialized
 # avro schema/data(?) with the avro schema id only at the top of the blob, after a magic byte identifier.
 # Will/should be redone as a codec used with the kafka input plugin instead. Will be very similar to the 
-# existing avro codec, just differing in how to retrieve the schema and that it should not be parsed from
-# the beginning of the blob.
+# existing avro codec, just differing in that the schema id is defined in the beginning of the blob and
+# fetched from the configured schema_registry url instead of being one "hard configured" schema.
 #
 # Byte 0, Size 1: Magic Byte Identifier
 # Byte 1, Size 4: Avro Schema ID
